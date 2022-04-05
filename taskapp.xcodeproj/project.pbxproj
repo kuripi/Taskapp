@@ -15,6 +15,7 @@
 		FCB3774827EB5C11002C3B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB3774727EB5C11002C3B42 /* Assets.xcassets */; };
 		FCB3774B27EB5C11002C3B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB3774927EB5C11002C3B42 /* LaunchScreen.storyboard */; };
 		FCB5A11627FB0A06006192B0 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB5A11527FB0A06006192B0 /* InputViewController.swift */; };
+		FCF3572227FBD29700312923 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF3572127FBD29700312923 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FCB3774A27EB5C11002C3B42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCB3774C27EB5C11002C3B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCB5A11527FB0A06006192B0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		FCF3572127FBD29700312923 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,13 @@
 				AC9AB9D68B9359F983A422E2 /* Pods-taskapp.debug.xcconfig */,
 				07F6A46E4B9D70EA796A13A3 /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		FCB3773227EB5C10002C3B42 = {
 			isa = PBXGroup;
 			children = (
+				FCF3572127FBD29700312923 /* Task.swift */,
 				FCB3773D27EB5C10002C3B42 /* taskapp */,
 				FCB3773C27EB5C10002C3B42 /* Products */,
 				E67B276D285B19DF3AB19156 /* Pods */,
@@ -212,6 +214,7 @@
 			files = (
 				FCB3774327EB5C10002C3B42 /* ViewController.swift in Sources */,
 				FCB3773F27EB5C10002C3B42 /* AppDelegate.swift in Sources */,
+				FCF3572227FBD29700312923 /* Task.swift in Sources */,
 				FCB3774127EB5C10002C3B42 /* SceneDelegate.swift in Sources */,
 				FCB5A11627FB0A06006192B0 /* InputViewController.swift in Sources */,
 			);
