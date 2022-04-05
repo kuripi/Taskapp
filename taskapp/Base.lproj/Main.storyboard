@@ -97,8 +97,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-8k-a6F">
-                                <rect key="frame" x="10" y="85" width="394" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-8k-a6F">
+                                <rect key="frame" x="10" y="83" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -157,6 +157,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cUU-Q1-rM1"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="Hgg-8k-a6F" id="fez-N2-VDd"/>
                         <outlet property="contentsTextView" destination="q2d-bd-QWt" id="Q9q-t9-rlB"/>
                         <outlet property="datePicker" destination="mMy-L2-4Oq" id="8QK-ci-pl5"/>
                         <outlet property="titleTextField" destination="wbp-Fm-1H9" id="gBk-96-yEM"/>
