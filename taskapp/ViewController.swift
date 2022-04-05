@@ -9,9 +9,10 @@ import UIKit
 import RealmSwift   // ←追加
 import UserNotifications    // 追加
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var search: UISearchBar!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()  // ←追加
@@ -27,8 +28,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.fillerRowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        search.delegate = self
     }
 
+    // 検索バーに入力があるとここが呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchText = search.text else {
+            return
+        }
+        if (searchText == "") {
+            // 全件表示（カテゴリーに空白は入らない前提）
+            taskArray = realm.objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+        } else {
+            // 検索処理
+            taskArray = realm.objects(Task.self).filter("category = '\(searchText)'").sorted(byKeyPath: "date", ascending: true)
+        }
+        // 表示更新
+        tableView.reloadData()
+    }
+    
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count  // ←修正する
@@ -41,8 +60,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         // Cellに値を設定する  --- ここから ---
         let task = taskArray[indexPath.row]
-        cell.textLabel?.text = task.title
-        
+        // cell.textLabel?.text = task.title
+        // 検索結果がわかるようにカテゴリーを表示させる
+        cell.textLabel?.text = task.category
+
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
 
