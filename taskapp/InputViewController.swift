@@ -49,12 +49,7 @@ class InputViewController: UIViewController {
     // タスクのローカル通知を登録する --- ここから ---
     func setNotification(task: Task) {
         let content = UNMutableNotificationContent()
-        // カテゴリーとタイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
-        if task.category == "" {
-            content.title = "(カテゴリーなし)"
-        } else {
-            content.title = task.title
-        }
+        // タイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
         if task.title == "" {
             content.title = "(タイトルなし)"
         } else {
